@@ -42,7 +42,7 @@
     grid.classList.toggle("is-single", offers.length === 1);
     grid.innerHTML = offers.map(function (o) {
       return '<article class="offer">' +
-        '<img src="' + esc(o.image) + '" alt="' + esc(o.alt) + '" width="290" height="194" loading="lazy">' +
+        '<img src="' + esc(o.image) + '" alt="' + esc(o.alt) + '" width="290" height="194">' +
         '<div class="offer-text">' +
           '<h3>' + esc(o.title) + '</h3>' +
           (o.detail ? '<p class="offer-detail">' + esc(o.detail) + '</p>' : '') +

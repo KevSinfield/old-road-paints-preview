@@ -52,7 +52,7 @@ address { font-style: normal; }
 .btn-green { background: var(--green-mid); color: #fff; }
 .btn-sage { background: var(--sage-btn); color: var(--green); }
 .btn-outline { background: #fff; color: var(--ink); border-color: var(--green); }
-.btn-lg { min-height: 56px; padding: 12px 22px; font-size: 19px; }
+.btn-lg { min-height: 56px; padding: 12px 20px; font-size: 18px; }
 .btn[aria-disabled="true"] { cursor: not-allowed; }
 .btn[aria-disabled="true"]:hover { filter: none; }
 .ico-wa { fill: #25a244 !important; width: 26px !important; height: 26px !important; }
@@ -64,7 +64,7 @@ address { font-style: normal; }
   padding-top: 20px; padding-bottom: 20px;
 }
 .brand { flex: none; }
-.brand img { width: 250px; }
+.brand img { width: 290px; }
 .main-nav { display: flex; align-items: center; gap: 30px; margin-left: auto; }
 .main-nav a { text-decoration: none; font-size: 16px; font-weight: 500; color: var(--ink); padding: 6px 0; }
 .main-nav a:hover { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
@@ -122,8 +122,9 @@ address { font-style: normal; }
 .contact-col > p, .contact-col address { margin-top: 12px; font-size: 19px; color: var(--muted); }
 .contact-col .actions { margin-top: 24px; }
 .visit-col { border-left: 2px solid #b9c6ad; padding-left: 34px; }
-.wa-wrap { display: inline-flex; flex-direction: column; gap: 6px; }
-.wa-note { font-size: 13px; color: var(--muted); font-style: italic; max-width: 260px; }
+.wa-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.wa-badge { display: inline-block; margin-right: 6px; padding: 1px 8px; border-radius: 999px; background: #fff; border: 1px solid #b9c6ad; font-size: 12px; font-weight: 500; color: var(--green); }
+#whatsapp-btn[aria-disabled="true"] { opacity: .8; }
 
 /* Footer */
 .site-footer { background: var(--green-dark); color: #fff; padding: 22px 0 18px; }
@@ -169,9 +170,6 @@ address { font-style: normal; }
   .offer-detail, .offer-unit { font-size: 17px; }
   .cat-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .btn-lg { font-size: 17px; min-height: 52px; }
-  .wa-wrap { flex: 1 1 100%; }
-  .wa-wrap .btn { width: 100%; justify-content: center; }
-  .wa-note { max-width: none; }
   .footer-small { flex-direction: column; }
 }
 @media (max-width: 360px) {
