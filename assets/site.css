@@ -102,7 +102,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 /* Hero */
 .hero { padding: 26px 0 44px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 40px; align-items: center; }
-.hero h1 { font-size: clamp(40px, 5vw, 60px); font-weight: 600; }
+.hero h1 { font-size: clamp(40px, 5vw, 60px); font-weight: 600; text-wrap: balance; }
 .lede { margin-top: 18px; font-size: clamp(21px, 2.3vw, 28px); color: var(--text); line-height: 1.25; }
 .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
 .hero-media { position: relative; margin: 0; }
@@ -252,10 +252,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 /* ---------- Compact header with Menu button ---------- */
 @media (max-width: 720px) {
   .header-inner { padding-top: 10px; padding-bottom: 10px; gap: 10px; }
-  .brand img { width: 168px; }
+  .brand { flex: 0 1 180px; min-width: 0; }
+  .brand img { width: 100%; max-width: 180px; }
+  .header-actions { flex: none; gap: 8px; }
   .phone-full { display: none; }
   .phone-short { display: inline; }
-  .btn-phone { min-height: 44px; padding: 8px 14px; font-size: 17px; gap: 7px; }
+  .btn-phone { min-height: 44px; padding: 8px 12px; font-size: 17px; gap: 6px; }
   .btn-phone .ico { width: 18px; height: 18px; }
   .menu-toggle { display: inline-flex; }
   .js .main-nav { display: none; }
@@ -302,7 +304,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .offer-card .offer-price { margin-top: 0; padding-top: 10px; font-size: 36px; }
 }
 @media (max-width: 360px) {
-  .brand img { width: 140px; }
-  .menu-toggle { padding: 8px 10px; }
+  .menu-toggle { padding: 8px 9px; gap: 6px; }
   .offer { grid-template-columns: minmax(0, 1fr); }
 }
