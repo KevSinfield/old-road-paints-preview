@@ -306,3 +306,8 @@ address { font-style: normal; }
   .offer-card .offer-price { margin-top: 10px; font-size: 34px; }
   .wa-label { text-align: center; }
 }
+@media (min-width: 561px) {
+  .offer-card { display: flex; flex-direction: column; }
+  .offer-card-text { flex: 1 1 auto; display: flex; flex-direction: column; }
+  .offer-card .offer-price { margin-top: auto; padding-top: 16px; }
+}
