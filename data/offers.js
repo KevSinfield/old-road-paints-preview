@@ -1,9 +1,14 @@
 /*
   OLD ROAD IN-STORE OFFERS — edit this file to change the offers on the homepage.
 
+  Where offers appear:
+    - In-store offers page (offers.html) shows every live offer, in this order.
+    - Homepage shows the first two live offers.
+
   How to update when Mark texts a new offer:
     1. Put the product photo in assets/img/ (WebP or JPG, about 600px wide is plenty).
-    2. Change the fields below. Keep one or two offers in the list.
+    2. Change the fields below. Put the two you most want on the homepage first.
+       Three offers fill one row on the offers page; up to six works well.
     3. Set "ends" to the last day of the offer (YYYY-MM-DD). The offer hides itself
        the day after. Leave it as "" for no end date.
     4. Commit and push. GitHub Pages updates within a minute or two.
@@ -39,6 +44,15 @@ window.OLD_ROAD_OFFERS = {
       unit: "per roll",
       image: "assets/img/offer-wallpaper.webp",
       alt: "Rolls of leaf-pattern, linen-effect and floral wallpaper",
+      ends: ""
+    },
+    {
+      title: "Roller and tray set",
+      detail: "",
+      price: "£5.99",
+      unit: "",
+      image: "assets/img/offer-roller-tray.webp",
+      alt: "A paint roller resting in a black roller tray",
       ends: ""
     }
   ]

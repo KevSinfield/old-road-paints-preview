@@ -26,32 +26,54 @@
     return "Offer ends " + d.toLocaleDateString("en-GB", { day: "numeric", month: "long" });
   }
 
+  function offerText(o) {
+    return '<h3>' + esc(o.title) + '</h3>' +
+      (o.detail ? '<p class="offer-detail">' + esc(o.detail) + '</p>' : '') +
+      (o.unit && o.layout === "card" ? '<p class="offer-unit">' + esc(o.unit) + '</p>' : '') +
+      '<p class="offer-price">' + esc(o.price) + '</p>' +
+      (o.unit && o.layout !== "card" ? '<p class="offer-unit">' + esc(o.unit) + '</p>' : '') +
+      (o.ends ? '<p class="offer-ends">' + esc(endsText(o.ends)) + '</p>' : '');
+  }
+
   function renderOffers() {
     var data = window.OLD_ROAD_OFFERS;
-    var grid = document.getElementById("offer-grid");
-    if (!data || !grid) return;
+    if (!data) return;
     var today = new Date();
-    var offers = (data.offers || []).filter(function (o) { return isLive(o, today); }).slice(0, 2);
+    var live = (data.offers || []).filter(function (o) { return isLive(o, today); });
+
     if (!data.example) {
       var label = document.getElementById("offers-label");
       var note = document.getElementById("offer-note");
       if (label) label.hidden = true;
       if (note) note.innerHTML = 'While stocks last. Call <a href="tel:+441255428918">01255 428918</a> to check stock.';
     }
-    if (!offers.length) return; // keeps the "call for this week's offers" fallback
-    grid.classList.toggle("is-single", offers.length === 1);
-    grid.innerHTML = offers.map(function (o) {
-      return '<article class="offer">' +
-        '<img src="' + esc(o.image) + '" alt="' + esc(o.alt) + '" width="290" height="194">' +
-        '<div class="offer-text">' +
-          '<h3>' + esc(o.title) + '</h3>' +
-          (o.detail ? '<p class="offer-detail">' + esc(o.detail) + '</p>' : '') +
-          '<p class="offer-price">' + esc(o.price) + '</p>' +
-          (o.unit ? '<p class="offer-unit">' + esc(o.unit) + '</p>' : '') +
-          (o.ends ? '<p class="offer-ends">' + esc(endsText(o.ends)) + '</p>' : '') +
-        '</div>' +
-      '</article>';
-    }).join("");
+
+    /* Homepage: first two live offers, image beside text */
+    var grid = document.getElementById("offer-grid");
+    if (grid && live.length) {
+      var two = live.slice(0, 2);
+      grid.classList.toggle("is-single", two.length === 1);
+      grid.innerHTML = two.map(function (o) {
+        return '<article class="offer">' +
+          '<img src="' + esc(o.image) + '" alt="' + esc(o.alt) + '" width="290" height="194">' +
+          '<div class="offer-text">' + offerText(o) + '</div>' +
+        '</article>';
+      }).join("");
+    }
+
+    /* Offers page: every live offer, image above text */
+    var list = document.getElementById("offer-list");
+    if (list && live.length) {
+      list.classList.toggle("count-1", live.length === 1);
+      list.classList.toggle("count-2", live.length === 2);
+      list.innerHTML = live.map(function (o) {
+        var c = Object.assign({}, o, { layout: "card" });
+        return '<article class="offer-card">' +
+          '<img src="' + esc(o.image) + '" alt="' + esc(o.alt) + '" width="300" height="226" loading="lazy">' +
+          '<div class="offer-card-text">' + offerText(c) + '</div>' +
+        '</article>';
+      }).join("");
+    }
   }
 
   function setupWhatsApp() {
