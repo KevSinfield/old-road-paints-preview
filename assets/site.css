@@ -143,7 +143,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 
 /* Categories */
 .categories { padding: 0 0 36px; }
-.cat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; max-width: 1180px; padding: 0 16px; }
+.cat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .cat img { width: 100%; aspect-ratio: 323 / 199; object-fit: cover; border-radius: 6px; }
 .cat h2 { margin-top: 14px; font-size: clamp(21px, 2.2vw, 26px); }
 .cat h2 a { text-decoration: none; }
@@ -233,7 +233,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .hero-grid, .hero-paint .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; }
   .hero-media { order: 2; }
   .offer-grid, .offer-grid.is-single { grid-template-columns: minmax(0, 1fr); }
-  .cat-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding: 0 24px; }
+  .offer { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 26px; }
+  .cat-grid { gap: 14px; }
+  .cat p { font-size: 15px; }
   .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
   .visit-col { border-left: 0; padding-left: 0; border-top: 2px solid var(--pale-line); padding-top: 28px; }
   .footer-name { border-right: 0; padding-right: 0; width: 100%; }
@@ -248,7 +250,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .brand-row li { height: 70px; }
   .brand-row img { max-height: 62px; max-width: 120px; }
   .actions-stack { max-width: none; }
-  .offer-cards, .offer-cards.count-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .offer-cards { gap: 12px; }
+  .offer-card .offer-unit, .offer-card .offer-detail { font-size: 18px; }
+}
+@media (max-width: 640px) {
 }
 
 /* ---------- Compact header with Menu button ---------- */
@@ -274,7 +279,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 /* ---------- Phone ---------- */
 @media (max-width: 560px) {
   body { font-size: 17px; }
-  .wrap, .cat-grid { padding: 0 16px; }
+  .wrap { padding: 0 16px; }
   .hero { padding: 16px 0 34px; }
   .actions { gap: 10px; }
   .actions .btn { flex: 1 1 auto; justify-content: center; }
@@ -286,8 +291,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .footer-small { flex-direction: column; }
   .step-icon { width: 68px; height: 68px; }
   .step-icon svg { width: 44px; height: 44px; }
-  .brand-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-  .brand-row li { height: 64px; }
+  .brand-row { justify-content: center; gap: 14px; }
+  .brand-row li { height: 64px; flex: 0 0 calc((100% - 28px) / 3); }
   .brand-row img { max-width: 100%; max-height: 56px; }
   .section-head-rule::after { display: none; }
   .section-head-rule h2 { border-right: 0; padding-right: 0; }

@@ -29,9 +29,8 @@
   function offerText(o) {
     return '<h3>' + esc(o.title) + '</h3>' +
       (o.detail ? '<p class="offer-detail">' + esc(o.detail) + '</p>' : '') +
-      (o.unit && o.layout === "card" ? '<p class="offer-unit">' + esc(o.unit) + '</p>' : '') +
+      (o.unit ? '<p class="offer-unit">' + esc(o.unit) + '</p>' : '') +
       '<p class="offer-price">' + esc(o.price) + '</p>' +
-      (o.unit && o.layout !== "card" ? '<p class="offer-unit">' + esc(o.unit) + '</p>' : '') +
       (o.ends ? '<p class="offer-ends">' + esc(endsText(o.ends)) + '</p>' : '');
   }
 
@@ -67,10 +66,9 @@
       list.classList.toggle("count-1", live.length === 1);
       list.classList.toggle("count-2", live.length === 2);
       list.innerHTML = live.map(function (o) {
-        var c = Object.assign({}, o, { layout: "card" });
         return '<article class="offer-card">' +
           '<img src="' + esc(o.image) + '" alt="' + esc(o.alt) + '" width="300" height="226" loading="lazy">' +
-          '<div class="offer-card-text">' + offerText(c) + '</div>' +
+          '<div class="offer-card-text">' + offerText(o) + '</div>' +
         '</article>';
       }).join("");
     }
