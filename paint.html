@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20261113g">
+<link rel="stylesheet" href="assets/site.css?v=20261113h">
 <link rel="preload" as="image" href="assets/img/paint-hero.webp">
 </head>
 <body>
@@ -68,33 +68,40 @@
     </div>
   </section>
 
-  <section class="steps" aria-label="How colour mixing works">
+  <section class="steps" aria-labelledby="steps-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="steps-title">How colour mixing works</h2>
+        <span class="head-rule" aria-hidden="true"></span>
+      </div>
+    </div>
     <ol class="wrap step-grid">
       <li class="step">
         <span class="step-icon" aria-hidden="true">
           <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="14" y="10" width="14" height="44" rx="3" transform="rotate(-20 21 54)"/><rect x="22" y="10" width="14" height="44" rx="3" transform="rotate(5 29 54)"/><path d="M38 20l10 4-11 30"/><path d="M44 30l8 6-14 18"/><circle cx="21" cy="47" r="2.5"/></g></svg>
         </span>
-        <h2>Bring a shade name or code</h2>
+        <h3>Bring a shade name or code</h3>
       </li>
       <li class="step">
         <span class="step-icon" aria-hidden="true">
           <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="18" rx="18" ry="6"/><path d="M14 18v28c0 3.3 8 6 18 6s18-2.7 18-6V18"/><path d="M14 20c-3 4-3 10 0 14"/><path d="M50 20c3 4 3 10 0 14"/><circle cx="50" cy="22" r="1.5"/></g></svg>
         </span>
-        <h2>Choose your finish</h2>
+        <h3>Choose your finish</h3>
       </li>
       <li class="step">
         <span class="step-icon" aria-hidden="true">
           <svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="14" y="12" width="36" height="44" rx="4"/><rect x="24" y="7" width="16" height="9" rx="3"/><path d="M21 28l3 3 5-6"/><path d="M34 29h10"/><path d="M21 42l3 3 5-6"/><path d="M34 43h10"/></g></svg>
         </span>
-        <h2>Check price and availability</h2>
+        <h3>Check price and availability</h3>
       </li>
     </ol>
   </section>
 
   <section class="brands" aria-labelledby="brands-title">
     <div class="wrap">
-      <div class="section-head section-head-rule">
+      <div class="section-head">
         <h2 id="brands-title">Paint brands we supply</h2>
+        <span class="head-rule" aria-hidden="true"></span>
       </div>
       <ul class="brand-row">
         <li><img src="assets/img/brands/dulux-trade.webp" alt="Dulux Trade" width="170" height="92" loading="lazy"></li>
@@ -156,6 +163,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=20261113g"></script>
+<script src="assets/site.js?v=20261113h"></script>
 </body>
 </html>
