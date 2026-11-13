@@ -57,10 +57,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .btn .ico { width: 20px; height: 20px; fill: currentColor; flex: none; }
 .btn-primary { background: var(--blue); color: #fff; }
 .btn-primary:hover { background: var(--blue-hover); }
-.btn-secondary { background: var(--pale); color: var(--ink-blue); border-color: var(--pale); }
-.btn-secondary:hover { border-color: var(--pale-line); }
-.contact .btn-secondary { background: var(--pale-strong); border-color: var(--pale-strong); }
-.contact .btn-secondary:hover { border-color: var(--blue); }
+.btn-secondary { background: #fff; color: var(--ink-blue); border-color: var(--ink-blue); }
+.btn-secondary:hover { background: var(--pale-strong); }
 .btn-outline { background: #fff; color: var(--ink-blue); border-color: var(--ink-blue); }
 .btn-lg { min-height: 56px; padding: 12px 20px; font-size: 19px; }
 .btn[aria-disabled="true"] { cursor: not-allowed; }
@@ -113,8 +111,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .hero h1 { font-size: clamp(40px, 5vw, 62px); line-height: 1.04; letter-spacing: -0.025em; text-wrap: balance; }
 .lede { margin-top: 18px; max-width: 470px; font-size: clamp(19px, 1.9vw, 23px); color: var(--text); line-height: 1.35; }
 .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
-.hero .btn-secondary { background: #fff; border-color: var(--ink-blue); }
-.hero .btn-secondary:hover { background: var(--pale); }
 .tag {
   position: absolute; right: 14px; bottom: 14px; z-index: 2;
   background: rgba(255,255,255,.94); color: var(--ink-blue);
@@ -123,18 +119,19 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .hero + section { padding-top: 64px; }
 
 /* Section headings: heading, thin rule to the right edge, optional link (echoes the header's rule) */
-.section-head { display: flex; align-items: center; gap: 12px 28px; margin-bottom: 26px; }
+.section-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-bottom: 26px; }
 .section-head h2 { font-size: clamp(32px, 3.9vw, 46px); letter-spacing: -0.02em; }
 .head-rule { flex: 1 1 60px; height: 1px; background: var(--pale-line); }
 .head-link {
-  flex: none; color: var(--ink-blue); font-size: 18px; font-weight: 500; text-decoration: none;
+  flex: none; display: inline-block; padding-top: 10px; color: var(--ink-blue); font-size: 18px; font-weight: 500; text-decoration: none;
   padding-bottom: 3px; border-bottom: 2px solid var(--blue); white-space: nowrap;
 }
 .head-link:hover { color: var(--blue); }
 
 /* Homepage offers */
 .offers { padding: 0 0 64px; }
-.example-label { margin: -14px 0 18px; font-style: italic; color: var(--blue); font-size: 18px; }
+.example-label { font-style: italic; color: var(--blue); font-size: 18px; }
+.section-head .example-label { order: 4; flex-basis: 100%; margin-top: -10px; }
 .offer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .offer-grid.is-single { grid-template-columns: minmax(0, 560px); }
 .offer {
@@ -154,13 +151,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 /* Categories */
 .categories { padding: 0 0 72px; }
 .cat-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-.cat { display: flex; flex-direction: column; padding-bottom: 20px; border-bottom: 2px solid var(--blue); }
+.cat { display: flex; flex-direction: column; padding-bottom: 12px; border-bottom: 2px solid var(--blue); }
 .cat img { width: 100%; aspect-ratio: 323 / 199; object-fit: cover; border-radius: 2px; }
 .cat h3 { margin-top: 18px; font-size: clamp(22px, 2.3vw, 27px); line-height: 1.15; }
 .cat h3 a { text-decoration: none; }
 .cat h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .cat p { margin: 10px 0 0; font-size: 17px; line-height: 1.5; color: var(--text); }
-.cat-more { margin-top: auto; padding-top: 16px; font-size: 17px; font-weight: 500; color: var(--blue); text-decoration: none; }
+.cat-more { align-self: flex-start; margin-top: auto; padding: 14px 0 8px; font-size: 17px; font-weight: 500; color: var(--blue); text-decoration: none; }
 .cat-more:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* Contact band */
@@ -191,11 +188,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 
 /* Paint page */
 .lede-dark { color: var(--text); font-size: clamp(20px, 2.1vw, 25px); line-height: 1.35; }
-.actions-stack { flex-direction: column; align-items: stretch; max-width: 400px; }
-.actions-stack .btn { justify-content: flex-start; }
 .hero-paint .hero-media { width: 60%; }
 .hero-paint .hero-media img { object-position: 50% 50%; }
-.hero-paint .hero-copy { max-width: 500px; }
+.hero-paint .hero-copy { max-width: 560px; }
 .hero-paint h1 { font-size: clamp(40px, 4.8vw, 58px); }
 .steps { padding: 0 0 72px; }
 .step-grid { list-style: none; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
@@ -258,7 +253,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .brand-row { justify-content: center; gap: 16px 28px; }
   .brand-row li { height: 70px; }
   .brand-row img { max-height: 62px; max-width: 120px; }
-  .actions-stack { max-width: none; }
   .offer-cards { gap: 12px; }
   .offer-card .offer-unit, .offer-card .offer-detail { font-size: 18px; }
 }
@@ -288,12 +282,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 }
 @media (max-width: 720px) {
   .header-inner { padding-top: 10px; padding-bottom: 10px; gap: 10px; }
-  .brand { flex-basis: 180px; }
-  .brand img { max-width: 180px; }
+  .brand { flex-basis: 220px; }
+  .brand img { max-width: 220px; }
+  .menu-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .menu-toggle { width: 46px; min-height: 46px; padding: 0; justify-content: center; }
+  .menu-toggle svg { width: 24px; height: 24px; }
   .header-actions { gap: 8px; }
   .phone-full { display: none; }
   .phone-short { display: inline; }
-  .btn-phone { min-height: 44px; padding: 8px 12px; font-size: 17px; gap: 6px; }
+  .btn-phone { min-height: 46px; padding: 8px 14px; font-size: 17px; gap: 6px; }
   .btn-phone .ico { width: 18px; height: 18px; }
   .js .main-nav { padding: 4px 16px 14px; }
 }
@@ -305,7 +302,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .hero-inner { padding-top: 22px; padding-bottom: 22px; }
   .actions { gap: 10px; }
   .actions .btn { flex: 1 1 auto; justify-content: center; }
-  .actions-stack .btn { justify-content: center; }
   .offer { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
   .offer-detail, .offer-unit { font-size: 18px; }
   .btn-lg { font-size: 18px; min-height: 52px; }
@@ -317,7 +313,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .brand-row img { max-width: 100%; max-height: 56px; }
   .section-head { flex-wrap: wrap; margin-bottom: 20px; }
   .head-rule { display: none; }
-  .example-label { margin-top: -10px; }
+  .section-head h2 { flex-basis: 100%; }
+  .section-head .example-label { order: 3; flex: 1 1 auto; flex-basis: auto; margin-top: 0; font-size: 17px; }
+  .head-link { order: 4; margin-left: auto; padding-top: 6px; font-size: 17px; }
   .btn-xl { font-size: 23px; width: 100%; justify-content: center; }
   .wa-row .btn { width: 100%; justify-content: center; }
   .wa-side { max-width: none; }
@@ -330,6 +328,5 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .offer-card .offer-price { margin-top: 0; padding-top: 10px; font-size: 36px; }
 }
 @media (max-width: 360px) {
-  .menu-toggle { padding: 8px 9px; gap: 6px; }
   .offer { grid-template-columns: minmax(0, 1fr); }
 }

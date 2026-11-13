@@ -11,8 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20261113i">
-<link rel="preload" as="image" href="assets/img/offers-banner.webp">
+<link rel="stylesheet" href="assets/site.css?v=20261113j">
+<link rel="preload" as="image" href="assets/img/offers-hero.webp">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -34,10 +34,10 @@
         <svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
         <span class="phone-full">01255 428918</span><span class="phone-short">Call</span>
       </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">
         <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        Menu
+        <span class="menu-label">Menu</span>
       </button>
     </div>
   </div>
@@ -47,7 +47,7 @@
 
   <section class="hero hero-offers" aria-labelledby="offers-title">
     <figure class="hero-media">
-      <img src="assets/img/offers-banner.webp" alt="Illustrative photo: a shop aisle with paint tins, brushes and rollers, sample books and wallpaper rolls" width="1448" height="517" fetchpriority="high">
+      <img src="assets/img/offers-hero.webp" alt="Illustrative photo: a shop aisle with wallpaper rolls and sample books, brushes and rollers at the back, and paint tins with price tags" width="1448" height="517" fetchpriority="high">
       <figcaption class="tag">Illustrative photo</figcaption>
     </figure>
     <div class="wrap hero-inner">
@@ -64,8 +64,8 @@
         <h2 id="current-title">This week’s offers</h2>
         <span class="head-rule" aria-hidden="true"></span>
         <a class="head-link" href="tel:+441255428918">Call to check stock <span aria-hidden="true">→</span></a>
+        <p class="example-label" id="offers-label">Example offers</p>
       </div>
-      <p class="example-label" id="offers-label">Example offers for this preview</p>
       <div class="offer-cards" id="offer-list">
         <!-- Filled from data/offers.js by assets/site.js -->
         <p class="offer-empty">Call <a href="tel:+441255428918">01255 428918</a> for this week's in-store offers.</p>
@@ -78,7 +78,7 @@
     <div class="wrap contact-grid">
       <div class="contact-col">
         <h2>Check prices and stock</h2>
-        <p>Send a shade code or a photo of your paint tin.</p>
+        <p>Call with a shade code and we’ll check the price and stock.</p>
         <div class="actions">
           <a class="btn btn-primary btn-lg" href="tel:+441255428918">
             <svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
@@ -121,7 +121,7 @@
   </div>
 </footer>
 
-<script src="data/offers.js?v=20261113i"></script>
-<script src="assets/site.js?v=20261113i"></script>
+<script src="data/offers.js?v=20261113j"></script>
+<script src="assets/site.js?v=20261113j"></script>
 </body>
 </html>
