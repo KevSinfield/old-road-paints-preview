@@ -255,7 +255,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .step-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .step { flex-direction: row; align-items: center; padding: 0 0 16px; }
   .steps, .brands, .offers-page { padding-bottom: 52px; }
-  .brand-row { justify-content: flex-start; gap: 16px 28px; }
+  .brand-row { justify-content: center; gap: 16px 28px; }
   .brand-row li { height: 70px; }
   .brand-row img { max-height: 62px; max-width: 120px; }
   .actions-stack { max-width: none; }
