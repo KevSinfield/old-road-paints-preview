@@ -17,4 +17,3 @@ The WhatsApp button is shown but inactive, marked as awaiting a confirmed number
 - Photos are cropped from the design mock-up and are illustrative, not the shop's own.
 - `robots.txt` and a `noindex` tag keep the preview out of search results.
 - Bump the `?v=` on the CSS/JS links in `index.html` after edits so returning visitors get the new files.
-- The blue logo (`assets/img/logo.webp`) was redrawn from the supplied artwork by `tools/draw_logo.py` (Pillow + macOS Avenir Next). Swap in the original file if the shop can supply it.
