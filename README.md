@@ -17,3 +17,7 @@ The WhatsApp button is shown but inactive, marked as awaiting a confirmed number
 - Photos are cropped from the design mock-up and are illustrative, not the shop's own.
 - `robots.txt` and a `noindex` tag keep the preview out of search results.
 - Bump the `?v=` on the CSS/JS links in `index.html` after edits so returning visitors get the new files.
+
+## Visit alerts (preview only, remove before launch)
+
+The end of `assets/site.js` sends a short anonymous push note to Kev's phone through ntfy.sh (topic `orp-preview-bw5njyis27`) when the published preview is opened, or when someone taps Call, WhatsApp or Get directions. It sends the page, the `?for=` link tag, the device type and the screen width. No cookies, no visitor IDs and no IP addresses. Links sent out: `?for=mark` and `?for=stuart`. Visit with `?me` once to stop your own device sending alerts.

@@ -114,3 +114,58 @@
   renderOffers();
   setupWhatsApp();
 })();
+
+/* ---------- Visit alerts (preview only; remove before launch) ----------
+   A short, anonymous note to Kev's phone via ntfy.sh when the published preview is opened or a
+   key button is tapped, as on the Vintage Pine and TT Automotive previews. It sends only the page,
+   the ?for= / ?from= link tag (if any), the device type and browser, and the screen width.
+   No cookies, no visitor IDs, and we don't log IP addresses. It runs only on the GitHub Pages copy.
+   Visit any page with ?me once to stop your own device sending alerts (?me=0 to undo). */
+(function () {
+  "use strict";
+  var TOPIC = "https://ntfy.sh/orp-preview-bw5njyis27";
+  function store(kind, k, v) { try { var s = window[kind]; if (v === undefined) return s.getItem(k); if (v === null) s.removeItem(k); else s.setItem(k, v); } catch (e) { return null; } }
+  var q = new URLSearchParams(location.search);
+  if (q.has("me")) store("localStorage", "orp-me", q.get("me") === "0" ? null : "1");
+  var off = store("localStorage", "orp-me") === "1" || location.hostname !== "kevsinfield.github.io";
+  var tag = (q.get("for") || q.get("from") || "").toLowerCase().replace(/[^a-z0-9-]/g, "").slice(0, 20);
+  if (tag) store("sessionStorage", "orp-from", tag); else tag = store("sessionStorage", "orp-from") || "";
+
+  function device() {
+    var u = navigator.userAgent;
+    var d = /iPhone/.test(u) ? "iPhone" : /iPad/.test(u) || (/Macintosh/.test(u) && navigator.maxTouchPoints > 1) ? "iPad"
+      : /Android/.test(u) ? "Android" : /Macintosh/.test(u) ? "Mac" : /Windows/.test(u) ? "Windows PC" : "Other device";
+    var b = /Edg\//.test(u) ? "Edge" : /CriOS|Chrome\//.test(u) ? "Chrome" : /FxiOS|Firefox\//.test(u) ? "Firefox" : /Safari\//.test(u) ? "Safari" : "";
+    return d + (b ? " (" + b + ")" : "") + ", " + screen.width + "px screen";
+  }
+  function page() {
+    var p = location.pathname;
+    return /paint\.html$/.test(p) ? "Paint page" : /offers\.html$/.test(p) ? "Offers page" : "Homepage";
+  }
+  function send(title, icon) {
+    if (off) return;
+    var msg = page() + " · " + device() + (tag ? " · for: " + tag : "");
+    try {
+      fetch(TOPIC + "?title=" + encodeURIComponent(title) + "&tags=" + (icon || "eyes"),
+        { method: "POST", body: msg, keepalive: true, mode: "cors" }).catch(function () {});
+    } catch (e) {}
+  }
+
+  var key = "orp-seen-" + location.pathname;
+  if (store("sessionStorage", key) !== "1") {
+    store("sessionStorage", key, "1");
+    var ref = "";
+    try { if (document.referrer && new URL(document.referrer).hostname !== location.hostname) ref = " (came from " + new URL(document.referrer).hostname + ")"; } catch (e) {}
+    send("Old Road preview opened" + (tag ? " by " + tag : "") + ": " + page() + ref, "eyes");
+  }
+
+  /* Key taps, once each per page view */
+  var done = {};
+  function once(k, title, icon) { if (done[k]) return; done[k] = 1; send(title, icon); }
+  document.addEventListener("click", function (e) {
+    var t = e.target && e.target.closest ? e.target : null; if (!t) return;
+    if (t.closest('a[href^="tel:"]')) once("call", "Tapped a Call button", "telephone_receiver");
+    else if (t.closest("#whatsapp-btn")) once("wa", "Tapped the WhatsApp button (not live yet)", "speech_balloon");
+    else if (t.closest('a[href*="google.com/maps"]')) once("map", "Tapped Get directions", "round_pushpin");
+  });
+})();
