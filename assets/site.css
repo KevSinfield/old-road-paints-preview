@@ -71,7 +71,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   padding-top: 14px; padding-bottom: 14px;
 }
 .brand { flex: none; }
-.brand img { width: 290px; }
+.brand img { width: 300px; }
 .header-actions { display: flex; align-items: center; gap: 10px; }
 .btn-phone { font-size: 20px; }
 .phone-short { display: none; }
